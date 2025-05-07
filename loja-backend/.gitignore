@@ -1,0 +1,20 @@
+# Node modules
+node_modules/
+
+# Prisma SQLite Database
+prisma/dev.db
+prisma/dev.db-journal
+
+# Environment variables
+.env
+
+# Logs e cache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs
+*.log
+
+# Editor de código
+.vscode/
+.idea/
