@@ -61,7 +61,6 @@ angular.module('LojaApp')
 
         $scope.deleteProduct = function (productId) {
             const token = localStorage.getItem('token');
-
             if (confirm("Tem certeza que deseja deletar este produto?")) {
                 ProductService.delete(productId, token)
                     .then(function () {
@@ -69,12 +68,15 @@ angular.module('LojaApp')
                         $scope.loadProducts();
                     })
                     .catch(function (error) {
+                        if (error.status === 500) {
+                            alert('Não foi possível deletar o produto, ele está no carrinho de um cliente.');
+                        } else {
+                            alert('Erro ao deletar o produto.');
+                        }
                         console.error('Erro ao deletar produto:', error);
-                        alert('Erro ao deletar o produto.');
                     });
             }
-        };
-
+        };        
 
         $scope.goToProducts = function () {
             $location.path('/products');
