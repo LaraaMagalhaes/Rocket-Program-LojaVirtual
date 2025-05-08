@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Produto</title>
+    <link rel="stylesheet" href="../assets/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <style>
+        body,
+        html {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container my-5">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h2>Adicionar Novo Produto</h2>
+            </div>
+            <div class="card-body">
+                <form ng-submit="addProduct()">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nome do Produto:</label>
+                        <input type="text" id="name" ng-model="newProduct.name" class="form-control"
+                            placeholder="Nome do produto" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Preço:</label>
+                        <input type="number" id="price" ng-model="newProduct.price" class="form-control"
+                            placeholder="Preço" step="0.01" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Descrição:</label>
+                        <textarea id="description" ng-model="newProduct.description" class="form-control"
+                            placeholder="Descrição do produto" rows="3" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100">Adicionar Produto</button>
+
+                    <p class="text-success mt-3" ng-if="successMessage">{{ successMessage }}</p>
+                    <p class="text-danger mt-3" ng-if="errorMessage">{{ errorMessage }}</p>
+                </form>
+
+                <button class="btn btn-outline-primary mt-4" ng-click="goToProducts()">
+                    🔙 Voltar para Produtos
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

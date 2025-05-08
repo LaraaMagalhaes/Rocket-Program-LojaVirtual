@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="LojaApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Loja Virtual</title>
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+
+    <script src="app.js"></script>
+
+    <!-- Services -->
+    <script src="services/AuthService.js"></script>
+    <script src="services/ProductService.js"></script>
+    <script src="services/CartService.js"></script>
+
+    <!-- Controllers -->
+    <script src="controllers/AuthController.js"></script>
+    <script src="controllers/ProductController.js"></script>
+    <script src="controllers/CartController.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#/">Loja Virtual</a>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Angular -->
+    <main>
+        <div ng-view></div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        © 2025 Loja Virtual. Todos os direitos reservados.
+    </footer>
+
+</body>
+</html>
